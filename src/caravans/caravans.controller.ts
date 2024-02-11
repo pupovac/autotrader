@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, HttpCode } from '@nestjs/common';
 import { CaravansService } from './caravans.service';
 import { CreateCaravanDto } from './create-caravan.dto';
 import { Caravan } from './caravan.interface';
@@ -15,5 +15,11 @@ export class CaravansController {
   @Get()
   async findAll(): Promise<Caravan[]> {
     return this.caravansService.findAll();
+  }
+
+  @Get('/health')
+  @HttpCode(200)
+  healthCheck() {
+    return { status: 'OK' };
   }
 }
