@@ -13,6 +13,7 @@ export class PageScraperService {
     let listings = await page.$$eval(
       "ul[data-testid='desktop-search'] > li",
       (listElements: any) => {
+        console.log('listElements', listElements);
         return listElements
           .filter((element) => !!element)
           .map((listElement) => {
@@ -59,7 +60,8 @@ export class PageScraperService {
       },
     );
 
-    console.log(listings);
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    console.log('results', listings);
     return listings;
   }
 }
