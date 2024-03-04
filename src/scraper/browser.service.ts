@@ -8,7 +8,7 @@ export class BrowserService {
     try {
       console.log('Opening the browser......');
       browser = await puppeteer.launch({
-        headless: true,
+        headless: "new",
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
         ignoreHTTPSErrors: true,
         executablePath: '/usr/bin/google-chrome'
