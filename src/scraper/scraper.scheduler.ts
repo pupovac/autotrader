@@ -37,7 +37,7 @@ const AUTOTRADER_URLS = [
 export class ScraperScheduler {
   constructor(private readonly scraperService: ScraperService) {}
 
-  @Cron(CronExpression.EVERY_2_HOURS)
+  @Cron(CronExpression.EVERY_5_MINUTES)
   async handleCron() {
     for (const url of AUTOTRADER_URLS) {
       console.log(`-----------------------------STARTED SCRAPER FOR ${url.make} --------------------------------------------`);
