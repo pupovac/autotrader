@@ -1,10 +1,11 @@
-import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 
-export const CaravanSchema = new mongoose.Schema({
+export const CaravanSchema = new Schema({
   title: { type: String, required: true },
-  price: { type: String, required: true },
   attentionGrabber: { type: String, required: false },
-  specs: { type: [String], required: false },
+  specs: { type: [String], required: true },
+  externalId: { type: String, required: true },
   url: { type: String, required: true },
-  pictureUrl: { type: String, required: false },
+  price: { type: String, default: '0' },
+  pictureUrl: { type: String },
 });

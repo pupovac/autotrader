@@ -6,7 +6,7 @@ import { CaravanSchema } from './caravan.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'caravan', schema: CaravanSchema }]),
+    MongooseModule.forFeature([{ name: 'Caravan', schema: CaravanSchema }]),
   ],
   controllers: [CaravansController],
   providers: [CaravansService],

@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CaravansModule } from './caravans/caravans.module';
+import { ScraperModule } from './scraper/scraper.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -11,7 +13,9 @@ import { CaravansModule } from './caravans/caravans.module';
         };
       },
     }),
-    CaravansModule,
+    // CaravansModule,
+    ScheduleModule.forRoot(),
+    ScraperModule,
   ],
   controllers: [],
   providers: [],

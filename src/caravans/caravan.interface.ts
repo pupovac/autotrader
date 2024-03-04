@@ -1,11 +1,9 @@
-import { Document } from 'mongoose';
-
-export interface Caravan extends Document {
+export interface Caravan {
   title: string;
-  price: string;
-  attentionGrabber: string;
+  attentionGrabber?: string;
   specs: string[];
-  _id?: string;
   url: string;
-  pictureUrl: string;
+  externalId: string;
+  price: string;
+  pictureUrl?: string;
 }

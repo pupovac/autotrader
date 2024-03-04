@@ -8,9 +8,9 @@ export class CaravansController {
   constructor(private readonly caravansService: CaravansService) {}
 
   @Post()
-  async create(@Body() createCaravanDto: CreateCaravanDto) {
-    return this.caravansService.create(createCaravanDto);
-  }
+  // async create(@Body() createCaravanDto: any) {
+  //   return this.caravansService.create(createCaravanDto);
+  // }
 
   @Get()
   async findAll(): Promise<Caravan[]> {
